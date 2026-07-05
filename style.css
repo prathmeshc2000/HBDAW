@@ -1,0 +1,389 @@
+/* :root {
+    --gold: #D4AF37;
+    --white: #FFFFFF;
+    --soft-black: #333333;
+    --glass-bg: rgba(255, 255, 255, 0.6);
+} */
+
+:root {
+    --sky-blue: #87CEEB;
+    --light-sky: #E0F4FF;
+    --deep-sky: #00BFFF;
+    --soft-black: #333333;
+    --glass-bg: rgba(224, 244, 255, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--light-sky) 0%, var(--sky-blue) 100%);
+    color: var(--soft-black);
+    overflow: hidden;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--light-sky) 0%, var(--sky-blue) 100%);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gold-dust {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.loader-content {
+    position: relative;
+    z-index: 1001;
+}
+
+.start-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--deep-sky);
+    padding: 1.5rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--soft-black);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+    background-color: var(--deep-sky);
+    color: var(--white);
+    box-shadow: 0 10px 25px rgba(0, 191, 255, 0.3);
+}
+
+
+.main-content {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#balloons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+.content-wrapper {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    padding: 4rem 2rem;
+    border-radius: 30px;
+    border: 1px solid rgba(135, 206, 235, 0.3);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}
+
+.recipient-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: var(--deep-sky);
+    text-shadow: 0 2px 10px rgba(0, 191, 255, 0.2);
+}
+
+.typing-container {
+    font-size: 1.5rem;
+    height: 3rem;
+    margin-bottom: 2rem;
+    color: var(--soft-black);
+}
+
+.visuals {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cake-svg {
+    width: 150px;
+    height: 150px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.wish-btn {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--deep-sky);
+    background: transparent;
+    color: var(--deep-sky);
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.wish-btn:hover {
+    background: var(--deep-sky);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
+}
+
+.wish-btn:active {
+    transform: scale(0.95);
+}
+
+.candle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.clock-svg {
+    width: 100px;
+    height: 100px;
+    animation: clockPulse 2s ease-in-out infinite;
+}
+
+@keyframes clockPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.clock-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00BFFF;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+}
+
+.candle-svg {
+    width: 120px;
+    height: 240px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.candle-svg:hover {
+    transform: scale(1.05);
+}
+
+.blow-instruction {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--deep-sky);
+    font-weight: 600;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.wish-message {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.wish-message p {
+    font-size: 1.5rem;
+    color: var(--deep-sky);
+    font-weight: 700;
+    animation: sparkle 1s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.letter-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 1px solid var(--deep-sky);
+    color: var(--deep-sky);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.letter-btn:hover {
+    background-color: var(--deep-sky);
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+    .recipient-name {
+        font-size: 2.5rem;
+    }
+    .typing-container {
+        font-size: 1.2rem;
+    }
+    .start-btn {
+        padding: 1.2rem 2.4rem;
+        font-size: 1rem;
+    }
+    .wish-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    .content-wrapper {
+        padding: 3rem 1.5rem;
+    }
+    .candle-svg {
+        width: 100px;
+        height: 200px;
+    }
+    .clock-svg {
+        width: 80px;
+        height: 80px;
+    }
+    .clock-number {
+        font-size: 2rem;
+    }
+    .blow-instruction {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .recipient-name {
+        font-size: 2rem;
+    }
+    .typing-container {
+        font-size: 1rem;
+    }
+    .start-btn {
+        padding: 1rem 2rem;
+        font-size: 0.9rem;
+    }
+    .cake-svg {
+        width: 120px;
+        height: 120px;
+    }
+    .candle-svg {
+        width: 80px;
+        height: 160px;
+    }
+    .clock-svg {
+        width: 70px;
+        height: 70px;
+    }
+    .clock-number {
+        font-size: 1.8rem;
+    }
+    .blow-instruction {
+        font-size: 0.75rem;
+    }
+    .wish-message p {
+        font-size: 1.2rem;
+    }
+    .container {
+        width: 95%;
+    }
+    .content-wrapper {
+        padding: 2rem 1rem;
+    }
+}
+
+.music-loader {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--deep-sky);
+}
+
+.music-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--light-sky);
+    border-top-color: var(--deep-sky);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loader" class="loader">
+        <canvas id="gold-dust"></canvas>
+        <div class="loader-content">
+            <button id="play" class="start-btn">Hay BubiMon 😊  </button>
+        </div>
+    </div>
+
+    <main id="main" class="main-content" style="display: none;">
+        <canvas id="confetti"></canvas>
+        <canvas id="balloons"></canvas>
+        
+        <div class="container">
+            <div class="content-wrapper">
+                <header>
+                    <h1 id="name" class="recipient-name">Happy Birthday Anu..🎂</h1>
+                </header>
+
+                <div class="typing-container">
+                    <div id="typed-strings">
+                        <p>Happy Birthday!</p>
+                        <p>Have a wonderful day...</p>
+                        <p>Filled with joy and happiness.</p>
+                    </div>
+                    <span id="typed"></span>
+                </div>
+
+                <div class="visuals">
+                    <svg class="cake-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="50" width="60" height="30" rx="5" fill="#00BFFF" opacity="0.8"/>
+                        <rect x="30" y="30" width="40" height="20" rx="5" fill="#87CEEB"/>
+                        <rect x="48" y="15" width="4" height="15" fill="#333"/>
+                        <circle cx="50" cy="10" r="3" fill="#FFD700">
+                            <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+                        </circle>
+                    </svg>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="wish-btn" class="wish-btn">✨ Make a Wish</button>
+                </div>
+
+                <div id="candle-container" class="candle-container" style="display: none;">
+                    <div class="clock-container">
+                        <svg class="clock-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="#00BFFF" stroke-width="3"/>
+                            <line x1="50" y1="50" x2="50" y2="15" stroke="#00BFFF" stroke-width="2" stroke-linecap="round" id="clock-hand"/>
+                            <circle cx="50" cy="50" r="3" fill="#00BFFF"/>
+                        </svg>
+                        <div class="clock-number" id="clock-number">10</div>
+                    </div>
+                    <svg class="candle-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="35" y="80" width="30" height="100" rx="5" fill="#FFB6C1"/>
+                        <rect x="40" y="70" width="20" height="15" fill="#FF69B4"/>
+                        <line id="wick" x1="50" y1="70" x2="50" y2="50" stroke="#333" stroke-width="2"/>
+                        <ellipse id="flame" cx="50" cy="40" rx="8" ry="15" fill="#FFD700">
+                            <animate attributeName="ry" values="15;18;15" dur="0.5s" repeatCount="indefinite"/>
+                            <animate attributeName="rx" values="8;10;8" dur="0.5s" repeatCount="indefinite"/>
+                        </ellipse>
+                        <ellipse cx="50" cy="45" rx="5" ry="8" fill="#FF6347" opacity="0.7"/>
+                        <g id="smoke" style="display: none;">
+                            <ellipse cx="50" cy="30" rx="6" ry="10" fill="#CCCCCC" opacity="0.5">
+                                <animate attributeName="cy" values="30;10" dur="1s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.5;0" dur="1s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <ellipse cx="45" cy="25" rx="4" ry="8" fill="#DDDDDD" opacity="0.4">
+                                <animate attributeName="cy" values="25;5" dur="1.2s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.4;0" dur="1.2s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <ellipse cx="55" cy="28" rx="5" ry="9" fill="#BBBBBB" opacity="0.3">
+                                <animate attributeName="cy" values="28;8" dur="0.8s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.3;0" dur="0.8s" repeatCount="indefinite"/>
+                            </ellipse>
+                        </g>
+                    </svg>
+                    <p class="blow-instruction">Make your wish... 🌟</p>
+                </div>
+
+                <div id="wish-message" class="wish-message" style="display: none;">
+                    <p>✨ Your wish comes true! ✨</p>
+                </div>
+
+                <footer>
+                    <a href="letter.html" class="letter-btn" id="letter-btn" style="display: none;">My Chotasa Message For You</a>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+    <audio id="song">
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="music-loader" class="music-loader" style="display: none;">
+        <div class="music-spinner"></div>
+        <p>Loading music...</p>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/typed.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
